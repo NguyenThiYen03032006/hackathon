@@ -140,15 +140,24 @@ int main(void){
                 break;
             case 8:
                 if(flag==1){
-                    int number8;
-                    printf(" Moi ban nhap 1 phan tu vao mang: ");
-                    scanf(" %d", &number8);
-                    for(int i=0; i<length; i++){
-                        if( number8 == arr[i]){
-                            printf(" Phan tu %d co ton tai trong mang \n", number8);
-                            break;
-                        }
+                    int end= length, start=0;
+                            int mid, item;
+                            
+                            printf("nhap gia tri can tim : ");
+                            scanf("%d",&item);
+                            end= length-1;
+                        while(start<=end){
+                    int mid =(start+end)/2;
+                    if(arr[mid]==item){
+                        printf("phan tu %d co vi tri  thu %d ",item, mid+1);
+                          int check = 2;
+                        break;
+                    }else if(arr[mid] <item ){
+                        start = mid +1;
+                    }else if(arr[mid] >item){
+                        end = mid -1;
                     }
+                }
                 }else{
                     printf(" Ban chua nhap phan tu cho mang \n");
                 }
